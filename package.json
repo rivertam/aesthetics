@@ -3,6 +3,7 @@
   "version": "3.0.0",
   "description": "Aesthetics/vaporwave",
   "main": "index.js",
+  "bin": "bin.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rivertam/aesthetics.git"
