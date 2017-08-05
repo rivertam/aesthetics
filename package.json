@@ -9,7 +9,8 @@
     "url": "git+https://github.com/rivertam/aesthetics.git"
   },
   "scripts": {
-    "build": "babel src -d ."
+    "build": "babel src -d .",
+    "prepublishOnly": "npm run build"
   },
   "author": "Ben Berman",
   "bugs": {
@@ -23,5 +24,6 @@
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-env": "^1.6.0"
-  }
+  },
+  "public": true
 }
