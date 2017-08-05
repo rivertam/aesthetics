@@ -1,1 +1,10 @@
-module.exports = input => { return input.replace(/[a-zA-Z0-9!\?\.'";:\]\[}{\)\(@#\$%\^&\*\-_=\+`~><]/g, (c) => String.fromCharCode(0xFEE0 + c.charCodeAt(0))).replace(/ /g, '　') } 
+const makeFullwidth = require('./fullwidth')
+
+module.exports = function makeAesthetic(string, { fullwidth = true } = {}) {
+  let str = "" + string
+  if (fullwidth) {
+    str = makeFullwidth(str)
+  }
+
+  return str
+}
