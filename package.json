@@ -1,15 +1,25 @@
 {
   "name": "aesthetics",
-  "version": "2.1.0",
-  "description": "Aesthetics/vaporwave/full-width",
+  "version": "3.0.0",
+  "description": "Aesthetics/vaporwave",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wkev/aesthetics.git"
+    "url": "git+https://github.com/rivertam/aesthetics.git"
   },
-  "author": "Kev",
-  "bugs": { 
-    "url": "https://github.com/wkev/aesthetics/issues"
+  "scripts": {
+    "build": "babel src -d ."
   },
-  "homepage": "https://github.com/wkev/aesthetics#readme"
+  "author": "Ben Berman",
+  "bugs": {
+    "url": "https://github.com/rivertam/aesthetics/issues"
+  },
+  "homepage": "https://github.com/rivertam/aesthetics#readme",
+  "dependencies": {
+    "commander": "^2.11.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.6.0"
+  }
 }
