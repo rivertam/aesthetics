@@ -16,7 +16,8 @@
   },
   "homepage": "https://github.com/rivertam/aesthetics#readme",
   "dependencies": {
-    "commander": "^2.11.0"
+    "commander": "^2.11.0",
+    "lorem-ipsum-japanese": "^1.0.1"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
