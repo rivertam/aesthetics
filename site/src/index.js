@@ -2,8 +2,6 @@ const 御日こらゆは擢みれａｅｓｔｈｅｔｉｃｓ = require('../..
 
 const ｆｏｒｍめも以屋名 = document.getElementById('ｆｏｒｍめも以屋名')
 
-// const ｌａｂｅｌｓしたむっのややく = Array.from(ｆｏｒｍめも以屋名.getElementsByClassName('ｌａｂｅｌゃるめ譜氏ヒフラテケ絵'))
-
 const ｏｐｔｉｏｎｓ目氏やつしろちんゅ = {};
 
 // ｓｅｔ　ｕｐ　ｏｐｔｉｏｎｓ　ｉｎｐｕｔｓ派留差擢もまにむ保
@@ -63,25 +61,29 @@ function ｓｅｔＯｐｔｉｏｎｓ擢二瀬列留派() {
   })
 }
 
+const ｔｅｘｔａｒｅａ差都模以以個らち = document.getElementsByTagName('TEXTAREA')[0]
+
 ｓｅｔＯｐｔｉｏｎｓ擢二瀬列留派()
+function ｈａｎｄｌｅＣｈａｎｇｅあサャアょねみ擢(模舳派なうけｅ) {
+  if (模舳派なうけｅ.target.tagName === 'INPUT') {
+    const ｋｅｙまよほふつえれふ目名 = 御日こらゆは擢みれａｅｓｔｈｅｔｉｃｓ.reverse(模舳派なうけｅ.target.getAttribute('ｖａｌｕｅ他魔くへてろあひ野御'))
 
-ｆｏｒｍめも以屋名.addEventListener('change', 模舳派なうけｅ => {
-  if (模舳派なうけｅ.target.tagName !== 'INPUT') {
-    return
+    ｏｐｔｉｏｎｓ目氏やつしろちんゅ[ｋｅｙまよほふつえれふ目名] = 模舳派なうけｅ.target.checked
+
+    ｓｅｔＯｐｔｉｏｎｓ擢二瀬列留派()
   }
-  const ｋｅｙまよほふつえれふ目名 = 御日こらゆは擢みれａｅｓｔｈｅｔｉｃｓ.reverse(模舳派なうけｅ.target.getAttribute('ｖａｌｕｅ他魔くへてろあひ野御'))
 
-  ｏｐｔｉｏｎｓ目氏やつしろちんゅ[ｋｅｙまよほふつえれふ目名] = 模舳派なうけｅ.target.checked
-
-  ｓｅｔＯｐｔｉｏｎｓ擢二瀬列留派()
-})
-
-ｆｏｒｍめも以屋名.addEventListener('submit', 模舳派なうけｅ => {
-  模舳派なうけｅ.preventDefault()
-
-  const ｕｇｌｙま遊遊巣区雲御派 = 模舳派なうけｅ.target['ん保留やｔｅｘｔ'].value
+  const ｕｇｌｙま遊遊巣区雲御派 = ｔｅｘｔａｒｅａ差都模以以個らち.value
 
   const 知他素て屋列御二課ｏｕｔｐｕｔ = document.getElementById('知他素て屋列御二課ｏｕｔｐｕｔ')
 
   知他素て屋列御二課ｏｕｔｐｕｔ.innerHTML = 御日こらゆは擢みれａｅｓｔｈｅｔｉｃｓ(ｕｇｌｙま遊遊巣区雲御派, ｏｐｔｉｏｎｓ目氏やつしろちんゅ)
+}
+
+ｆｏｒｍめも以屋名.addEventListener('change', ｈａｎｄｌｅＣｈａｎｇｅあサャアょねみ擢)
+ｔｅｘｔａｒｅａ差都模以以個らち.addEventListener('keyup', ｈａｎｄｌｅＣｈａｎｇｅあサャアょねみ擢)
+
+
+ｆｏｒｍめも以屋名.addEventListener('submit', 模舳派なうけｅ => {
+  模舳派なうけｅ.preventDefault()
 })
