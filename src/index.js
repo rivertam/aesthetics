@@ -13,37 +13,48 @@ function hashStringToNumber(str) {
   return hash
 }
 
-module.exports = function makeAesthetic(string, {
+function makeRandom(seed) {
+  return function random() {
+    const x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+  }
+}
+
+function makeAesthetic(string, {
   fullWidth = true,
   japanese = true,
   fileFormat = false,
   decorate = false,
-  seed = string,
+  seed: seedString = string,
 } = {}) {
-  const random = ((seedString) => {
-    let seed = hashStringToNumber(seedString)
-    return function random() {
-      const x = Math.sin(seed++) * 10000;
-      return x - Math.floor(x);
-    }
-  })(seed)
-
   let str = "" + string
+
+  const seed = hashStringToNumber(seedString)
+
+  if (fileFormat) {
+    str = addFormat({ string: str, random: makeRandom(seed) })
+  }
+
   if (fullWidth) {
     str = makeFullWidth(str)
   }
 
-  if (fileFormat) {
-    str = addFormat({ string: str, random })
-  }
 
   if (decorate) {
-    str = addDecoration({ string: str, random })
+    str = addDecoration({ string: str, random: makeRandom(seed) })
   }
 
   if (japanese) {
-    str = addJapanese({ string: str, random, count: japanese.count })
+    str = addJapanese({ string: str, random: makeRandom(seed), count: japanese.count })
   }
 
   return str
 }
+
+makeAesthetic.reverse = function makeUgly(pretty) {
+  return pretty
+    .replace(/[^\s]/g, c => String.fromCharCode(c.charCodeAt(0) - 0xFEE0))
+    .replace(/[^\sa-zA-Z0-9!\?\.'";:\]\[}{\)\(@#\$%\^&\*\-_=\+`~><]/g, '')
+}
+
+module.exports = makeAesthetic

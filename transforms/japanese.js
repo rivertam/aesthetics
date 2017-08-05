@@ -2,7 +2,7 @@ const lorem = require('lorem-ipsum-japanese')
 
 module.exports = ({ string, random, count }) => {
   const japanese = lorem({
-    count: count || Math.floor(random() * 2 + 3),
+    count: count || (Math.floor(random() * 2 + 3)),
     units: 'words',
     format: 'plain',
     random,
