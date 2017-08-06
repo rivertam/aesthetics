@@ -13,4 +13,4 @@ program
   .option('-d, --decorate', 'Add a decorator (such as ™)')
   .parse(process.argv)
 
-console.log(makeAesthetic(program.args.join(''), program))
+console.log(makeAesthetic(program.args.join(' '), program))
