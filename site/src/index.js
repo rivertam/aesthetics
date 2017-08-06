@@ -1,4 +1,4 @@
-const 御日こらゆは擢みれａｅｓｔｈｅｔｉｃｓ = require('../..')
+const 御日こらゆは擢みれａｅｓｔｈｅｔｉｃｓ = require('../../src')
 
 const ｆｏｒｍめも以屋名 = document.getElementById('ｆｏｒｍめも以屋名')
 
